@@ -100,5 +100,17 @@ $confirm = $this->myAlipay($order->id, $order_titles, $order_total);
 	}
 
 ```
+##6. Need  close CSRF in controller 异步必须关闭csrf
+```
+	public function beforeAction($action)
+	{            
+		if ($action->id == 'Notifycall') {
+		    $this->enableCsrfValidation = false;
+		}
 
+		return parent::beforeAction($action);
+	}
+	
+
+```
 
