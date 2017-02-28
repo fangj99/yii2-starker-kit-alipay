@@ -1,4 +1,4 @@
-# yii2-starker-kit-alipay
+# yii2-starker-kit and alipay
 
 Integration of alipay to yii2-starter-kit/advanced yii2 template
 
@@ -68,4 +68,29 @@ use AlipayPay;
 		$this->redirect(['order/query']);
 	}
 ```
+
+##4. Call the alipay function in your controller
+
+```
+//call for alipay
+$confirm = $this->myAlipay($order->id, $order_titles, $order_total);
+			
+```
+##5 Alipay function within the controller
+
+```
+	private function myAlipay($order_id, $title, $price)
+	{
+		$money = 0.01; //$price;
+		$body = 'xxxx 充值测试';
+		$show_url = 'https://xxxxxx.com/catalog/list';
+		$alipay = new AlipayPay();
+		$html = $alipay->requestPay($order_id, $title, $money, $body, $show_url);
+		return $html;
+		//echo $html;
+		//\Yii::info($html, 'cart');
+	}
+
+```
+
 
