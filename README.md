@@ -4,6 +4,7 @@ Integration of alipay to yii2-starter-kit/advanced yii2 template
 
 ##Other Yii2 extension used:
 omnilight/yii2-shopping-car : https://github.com/omnilight/yii2-shopping-cart
+
 samdark/yii2-shop : https://github.com/samdark/yii2-shop
 
 
