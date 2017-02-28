@@ -13,8 +13,11 @@ Integration of alipay to yii2-starter-kit/advanced yii2 template
 ```
 
 ##3 In controller, this sample is CartController, create two actions 
-public function actionNotifycall(): This one need to deal with all the transactions with the order, alipay server will retry this url couple of times
-public function actionReturncall(): this one just for redirection, for the result normally will be fail, alipay server will retry this url only one time
+###public function actionNotifycall(): 
+This one need to deal with all the transactions with the order, alipay server will retry this url couple of times
+
+###public function actionReturncall(): 
+this one just for redirection, for the result normally will be fail, alipay server will retry this url only one time
 
 After creat these two action, you can test with the url directly, it will show fail and redirection
 Show Fail: https://xxxxxxxxx.com/cart/notifycall
