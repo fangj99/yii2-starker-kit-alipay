@@ -20,8 +20,10 @@ This one need to deal with all the transactions with the order, alipay server wi
 this one just for redirection, for the result normally will be fail, alipay server will retry this url only one time
 
 After creat these two action, you can test with the url directly, it will show fail and redirection
-Show Fail: https://xxxxxxxxx.com/cart/notifycall
-Redirection: https://xxxxxxxxx.com/cart/returncall
+
+####Show Fail: https://xxxxxxxxx.com/cart/notifycall
+
+####Redirection: https://xxxxxxxxx.com/cart/returncall
 
 
 ```
