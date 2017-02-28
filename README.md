@@ -104,12 +104,16 @@ $confirm = $this->myAlipay($order->id, $order_titles, $order_total);
 ```
 	public function beforeAction($action)
 	{            
-		if ($action->id == 'Notifycall') {
-		    $this->enableCsrfValidation = false;
+		//\Yii::info($action->id,'cart');	
+		if ($action->id == 'notifycall') {
+			
+			//\Yii::info("csrf set to false",'cart');	
+			$this->enableCsrfValidation = false;
 		}
 
 		return parent::beforeAction($action);
 	}
+	
 	
 
 ```
