@@ -53,10 +53,11 @@ use AlipayPay;
 
             if($trade_status == 'TRADE_FINISHED'||$trade_status == 'TRADE_SUCCESS') 
             {
-                //\Yii::info($out_trade_no, 'cart');
-				$order_model = Order::findOne($out_trade_no);
-				$order_model->status = Order::STATUS_PAID;
-				$order_model->save();  // equivalent to $model->update();
+                //Process your order's transaction
+		//\Yii::info($out_trade_no, 'cart');
+				//$order_model = Order::findOne($out_trade_no);
+				//$order_model->status = Order::STATUS_PAID;
+				//$order_model->save();  // equivalent to $model->update();
 				
             }
             
