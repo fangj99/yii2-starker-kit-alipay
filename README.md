@@ -2,15 +2,15 @@
 
 Integration of alipay to yii2-starter-kit/advanced yii2 template
 
-##Other Yii2 extension used:
+### Other Yii2 extension used:
 omnilight/yii2-shopping-car : https://github.com/omnilight/yii2-shopping-cart
 
 samdark/yii2-shop : https://github.com/samdark/yii2-shop
 
 
 
-##1. Put folder Alipay under vendor folder
-##2. Setup your own alipay information in the vendor/Alipay/AlipayPay.php
+## 1. Put folder Alipay under vendor folder
+## 2. Setup your own alipay information in the vendor/Alipay/AlipayPay.php
 ```
  public $partner = '2088xxxxxxxxxxx';
  public $seller_email = 'yyyy@xxxxxxxxx.com';
@@ -19,18 +19,18 @@ samdark/yii2-shop : https://github.com/samdark/yii2-shop
  public $return_url = 'https://xxxxxxxxx.com/cart/returncall';
 ```
 
-##3 In controller, this sample is CartController, create two actions 
-###public function actionNotifycall(): 
+## 3 In controller, this sample is CartController, create two actions 
+### public function actionNotifycall(): 
 This one need to deal with all the transactions with the order, alipay server will retry this url couple of times
 
-###public function actionReturncall(): 
+### public function actionReturncall(): 
 this one just for redirection, for the result normally will be fail, alipay server will retry this url only one time
 
 After creat these two action, you can test with the url directly, it will show fail and redirection
 
-####Show Fail: https://xxxxxxxxx.com/cart/notifycall
+#### Show Fail: https://xxxxxxxxx.com/cart/notifycall
 
-####Redirection: https://xxxxxxxxx.com/cart/returncall
+#### Redirection: https://xxxxxxxxx.com/cart/returncall
 
 
 ```
@@ -77,14 +77,14 @@ use AlipayPay;
 	}
 ```
 
-##4. Call the alipay function in your controller
+## 4. Call the alipay function in your controller
 
 ```
 //call for alipay
 $confirm = $this->myAlipay($order->id, $order_titles, $order_total);
 			
 ```
-##5 Alipay function within the controller
+## 5 Alipay function within the controller
 
 ```
 	private function myAlipay($order_id, $title, $price)
@@ -100,7 +100,7 @@ $confirm = $this->myAlipay($order->id, $order_titles, $order_total);
 	}
 
 ```
-##6. Need  close CSRF in controller 异步必须关闭csrf
+## 6. Need  close CSRF in controller 异步必须关闭csrf
 ```
 	public function beforeAction($action)
 	{            
